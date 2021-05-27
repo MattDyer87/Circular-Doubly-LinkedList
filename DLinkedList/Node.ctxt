@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Node
+comment0.text=\r\n\ A\ node\ is\ a\ position\ within\ a\ doubly\ linked\ circular\ list\ that\ stores\ data,\r\n\ and\ which\ node\ is\ next\ and\ previous\r\n\ \r\n\r\n\ @author\ Matthew\ Dyer\r\n\ @version\ 2021.05.26\r\n
+comment1.params=data
+comment1.target=Node(java.lang.Object)
+comment1.text=\r\n\ Creates\ a\ node\ that\ stores\ data.\r\n\ @param\ data\ The\ data\ to\ be\ store\ in\ the\ node.\r\n
+comment2.params=node
+comment2.target=void\ setNext(Node)
+comment2.text=\r\n\ Sets\ the\ next\ node\ in\ the\ linked\ list\ to\ the\ param.\r\n\ @param\ node\ The\ node\ to\ be\ set\ as\ next\ in\ the\ linked\ list.\r\n
+comment3.params=node
+comment3.target=void\ setPrev(Node)
+comment3.text=\r\n\ Sets\ the\ previous\ node\ in\ the\ linked\ list\ to\ the\ param.\r\n\ @param\ node\ The\ node\ to\ be\ set\ as\ previous\ in\ the\ linked\ list.\r\n
+comment4.params=
+comment4.target=java.lang.Object\ getData()
+comment4.text=\r\n\ Returns\ the\ data\ stored\ in\ the\ node.\r\n\ @return\ The\ data\ stored\ in\ the\ node.\r\n
+comment5.params=
+comment5.target=Node\ getNext()
+comment5.text=\r\n\ Returns\ the\ next\ node\ in\ the\ linked\ list.\r\n\ @return\ The\ next\ node\ in\ the\ linked\ list.\r\n
+comment6.params=
+comment6.target=Node\ getPrev()
+comment6.text=\r\n\ Returns\ the\ previous\ node\ in\ the\ linked\ list.\r\n\ @return\ The\ previous\ node\ in\ the\ linked\ list.\r\n
+numComments=7
