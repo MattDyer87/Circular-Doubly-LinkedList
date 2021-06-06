@@ -2,7 +2,7 @@
 comment0.target=Person
 comment0.text=\r\n\ A\ simple\ person\ class\ for\ testing\ a\ doubly\ linked\ circular\ list.\ The\ person\ does\ nothing\ but\r\n\ contains\ a\ first\ name,\ a\ last\ name,\ and\ a\ 9\ digit\ ID\ number.\r\n\r\n\ @author\ Matthew\ Dyer\r\n\ @version\ 2021.05.26\r\n
 comment1.params=firstName\ lastName\ IDNumber
-comment1.target=Person(java.lang.String,\ java.lang.String,\ int)
+comment1.target=Person(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment1.text=\r\n\ Creates\ a\ Person\ object\ for\ use\ in\ testing\ a\ doubly\ linked\ circular\ list.\ The\ Person\r\n\ does\ nothing\ but\ contain\ information.\r\n\ @param\ firstName\ The\ first\ name\ of\ the\ Person.\r\n\ @param\ lastName\ The\ last\ name\ of\ the\ Person.\r\n\ @param\ IDNumber\ The\ 9\ digit\ ID\ number\ of\ the\ Person.\r\n
 comment2.params=
 comment2.target=java.lang.String\ getFirstName()
@@ -11,7 +11,7 @@ comment3.params=
 comment3.target=java.lang.String\ getLastName()
 comment3.text=\r\n\ Returns\ the\ last\ name\ of\ the\ Person.\r\n\ @return\ The\ last\ name\ of\ the\ Person.\r\n
 comment4.params=
-comment4.target=int\ getIDNumber()
+comment4.target=java.lang.String\ getIDNumber()
 comment4.text=\r\n\ Returns\ the\ ID\ number\ of\ the\ Person.\r\n\ @return\ The\ ID\ number\ of\ the\ Person.\r\n
 comment5.params=p
 comment5.target=boolean\ equals(java.lang.Object)

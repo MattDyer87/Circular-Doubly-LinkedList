@@ -13,7 +13,7 @@ public class Person
     // The last name of the Person
     private String lastName;
     // The 9 digit ID number of the Person.
-    private int IDNumber;
+    private String IDNumber;
 
     /**
      * Creates a Person object for use in testing a doubly linked circular list. The Person
@@ -22,11 +22,14 @@ public class Person
      * @param lastName The last name of the Person.
      * @param IDNumber The 9 digit ID number of the Person.
      */
-    public Person(String firstName, String lastName, int IDNumber)
+    public Person(String firstName, String lastName, String IDNumber)
     {
         this.firstName = firstName;
         this.lastName = lastName;
         this.IDNumber = IDNumber;
+        if(this.IDNumber.length() != 9) {
+            throw new IllegalStateException("ID Number must be 9 digits.");
+        }
     }
 
     /**
@@ -51,7 +54,7 @@ public class Person
      * Returns the ID number of the Person.
      * @return The ID number of the Person.
      */
-    public int getIDNumber()
+    public String getIDNumber()
     {
         return IDNumber;
     }
@@ -66,7 +69,7 @@ public class Person
         }
         Person person = (Person) p;
         return firstName.equals(person.firstName) && lastName.equals(person.lastName) && 
-                                        Integer.compare(IDNumber, person.IDNumber) == 0;
+                                        IDNumber.equals(person.IDNumber);
     }
     
 }
