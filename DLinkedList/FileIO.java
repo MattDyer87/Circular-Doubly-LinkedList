@@ -24,12 +24,20 @@ public class FileIO
     private static List<Integer> numbers = null;
     
     public static void main(String[] args) {
+        writeNumbersTxt("numbers.txt");
         List<Integer> nums = readFile("numbers.txt");
         System.out.println(nums);
-        Collections.sort(nums);
-        System.out.println(nums);
+        listToCDLinkList();
+        doubleThenWriteFile("newNumbers.txt");
+        List<Integer> newNums = readFile("newNumbers.txt");
+        System.out.println(newNums);
     }
     
+    /**
+     * Takes a file and reads it and stores the integers in a List.
+     * @param name The name of the file to be read.
+     * @return The list of numbers read from the file.
+     */
     public static List<Integer> readFile(String name) {
         try {
             numbers = Files.lines(new File(name).toPath())
@@ -44,20 +52,43 @@ public class FileIO
         return numbers;
     }
     
-    public void listToCDLinkList()
+    /**
+     * Adds all the contents of the numbers list to the custom made circular doubly linked list.
+     */
+    public static void listToCDLinkList()
     {
-        Iterator it = numbers.iterator();
-        while(it.hasNext()) {
-            cdll.add(it.next());
+        for (int i = 0; i < numbers.size(); i++) {
+            cdll.add(numbers.get(i));
         }
     }
     
-    public static void writeText(String name)
+    /**
+     * Writes 10 random numbers into a text file.
+     * @param name The name of the file to be created and written into.
+     */
+    public static void writeNumbersTxt(String name)
     {
         try {
             PrintWriter fileout = new PrintWriter(new FileWriter(name));
             for(int i = 0; i < 10; i++) {
                 fileout.println(rnd.nextInt(100) + 1);
+            }
+            fileout.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Doubles and writes the contents of the custom made circular doubly linked list to a txt file.
+     * @param name The name of the file to written.
+     */
+    public static void doubleThenWriteFile(String name)
+    {
+        try {
+            PrintWriter fileout = new PrintWriter(new FileWriter(name));
+            for(int i = 0; i < 10; i++) {
+                fileout.println(cdll.get(i) * 2);
             }
             fileout.close();
         } catch (IOException e) {

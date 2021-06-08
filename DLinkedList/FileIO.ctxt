@@ -1,10 +1,18 @@
 #BlueJ class context
 comment0.target=FileIO
-comment0.text=\r\n\ A\ class\ built\ for\ simple\ file\ reading\ and\ writing\ using\ integers.\r\n\r\n\ @author\ Matthew\ Dyer\r\n\ @version\ 2021.06.06\r\n
+comment0.text=\r\n\ A\ class\ built\ for\ simple\ file\ reading\ and\ writing\ using\ integers\ and\ a\ custom\r\n\ circular\ doubly\ linked\ list\ class.\r\n\r\n\ @author\ Matthew\ Dyer\r\n\ @version\ 2021.06.06\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 comment2.params=name
 comment2.target=java.util.List\ readFile(java.lang.String)
-comment3.params=name
-comment3.target=void\ writeText(java.lang.String)
-numComments=4
+comment2.text=\r\n\ Takes\ a\ file\ and\ reads\ it\ and\ stores\ the\ integers\ in\ a\ List.\r\n\ @param\ name\ The\ name\ of\ the\ file\ to\ be\ read.\r\n\ @return\ The\ list\ of\ numbers\ read\ from\ the\ file.\r\n
+comment3.params=
+comment3.target=void\ listToCDLinkList()
+comment3.text=\r\n\ Adds\ all\ the\ contents\ of\ the\ numbers\ list\ to\ the\ custom\ made\ circular\ doubly\ linked\ list.\r\n
+comment4.params=name
+comment4.target=void\ writeNumbersTxt(java.lang.String)
+comment4.text=\r\n\ Writes\ 10\ random\ numbers\ into\ a\ text\ file.\r\n\ @param\ name\ The\ name\ of\ the\ file\ to\ be\ created\ and\ written\ into.\r\n
+comment5.params=name
+comment5.target=void\ doubleThenWriteFile(java.lang.String)
+comment5.text=\r\n\ Doubles\ and\ writes\ the\ contents\ of\ the\ custom\ made\ circular\ doubly\ linked\ list\ to\ a\ txt\ file.\r\n\ @param\ name\ The\ name\ of\ the\ file\ to\ written.\r\n
+numComments=6
