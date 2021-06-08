@@ -4,43 +4,62 @@ import java.nio.file.Paths;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Random;
+import java.io.PrintWriter;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.Collections;
+import java.util.Iterator;
 
 /**
- * Write a description of class FileIO here.
+ * A class built for simple file reading and writing using integers and a custom
+ * circular doubly linked list class.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Matthew Dyer
+ * @version 2021.06.06
  */
 public class FileIO
 {
-    public static final Random rnd = new Random();
+    private static final Random rnd = new Random();
+    private static CircDblLinkedList<Integer> cdll = new CircDblLinkedList<>();
+    private static List<Integer> numbers = null;
     
     public static void main(String[] args) {
-        //readFile("ssss");
-        writeText("numbers.txt");
+        List<Integer> nums = readFile("numbers.txt");
+        System.out.println(nums);
+        Collections.sort(nums);
+        System.out.println(nums);
     }
     
-    public static void readFile(String name) {
+    public static List<Integer> readFile(String name) {
         try {
-            Files.lines(new File("input.txt").toPath())
+            numbers = Files.lines(new File(name).toPath())
                         .map(s -> s.trim())
                         .filter(s -> !s.isEmpty())
-                        .forEach(System.out::println);
+                        .map(s -> Integer.parseInt(s))
+                        .collect(Collectors.toList());
         }
         catch(IOException e) { 
             e.printStackTrace();
+        }
+        return numbers;
+    }
+    
+    public void listToCDLinkList()
+    {
+        Iterator it = numbers.iterator();
+        while(it.hasNext()) {
+            cdll.add(it.next());
         }
     }
     
     public static void writeText(String name)
     {
         try {
-            FileWriter writer = new FileWriter(name, true);
+            PrintWriter fileout = new PrintWriter(new FileWriter(name));
             for(int i = 0; i < 10; i++) {
-                writer.write(rnd.nextInt(100 + 1));
-                writer.write("\n");
+                fileout.println(rnd.nextInt(100) + 1);
             }
-            writer.close();
+            fileout.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
